@@ -15,9 +15,14 @@ class PlateauSizeParserTest {
         assertAll(() -> {
 
             assertInstanceOf(PlateauSize.class, plateauSizeParser.parseInput("1 1"));
-            assertInstanceOf(PlateauSize.class, plateauSizeParser.parseInput("m"));
+
+            assertEquals(null, plateauSizeParser.parseInput("m"));
+            assertEquals(null, plateauSizeParser.parseInput("11"));
+            assertEquals(null, plateauSizeParser.parseInput("? ?"));
+            assertEquals(null, plateauSizeParser.parseInput(""));
 
             assertEquals(4, plateauSizeParser.parseInput(("4 3")).getWidth());
+            assertEquals(4, plateauSizeParser.parseInput(("-4 -3")).getWidth());
             assertThat(testPlateau).usingRecursiveComparison().isEqualTo(plateauSizeParser.parseInput(("4 3")));
 
         });
