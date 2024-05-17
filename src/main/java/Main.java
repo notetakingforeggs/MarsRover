@@ -1,9 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        PlateauSizeParser plateauSizeParser = new PlateauSizeParser();
-        System.out.println(plateauSizeParser.parseInput("4 5"));
 
+        // initiate plateau
 
+        // initiate rover and place on plateau
+
+        // rover move
 
     }
 }
