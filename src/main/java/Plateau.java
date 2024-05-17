@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Plateau {
@@ -10,6 +11,7 @@ public class Plateau {
     public Plateau(PlateauSize plateauSize) {
         this.plateauSize = plateauSize;
         plateauArray = new Rover[plateauSize.getWidth()][plateauSize.getLength()];
+
 
     }
 
@@ -29,13 +31,15 @@ public class Plateau {
 
     public void moveRover(Instruction instruction, int roverNumber) {
 
+
         if (instruction == Instruction.L) {
             switch (rovers.get(roverNumber).getOrientation()) {
                 case N -> rovers.get(roverNumber).setOrientation(CompassDirection.W);
                 case W -> rovers.get(roverNumber).setOrientation(CompassDirection.S);
                 case S -> rovers.get(roverNumber).setOrientation(CompassDirection.E);
                 case E -> rovers.get(roverNumber).setOrientation(CompassDirection.N);
-                default -> throw new IllegalStateException("Unexpected value: " + rovers.get(roverNumber).getOrientation());
+                default ->
+                        throw new IllegalStateException("Unexpected value: " + rovers.get(roverNumber).getOrientation());
             }
         } else if (instruction == instruction.R) {
             switch (rovers.get(roverNumber).getOrientation()) {
@@ -51,39 +55,50 @@ public class Plateau {
                 case N -> {
                     if (rovers.get(roverNumber).getPosition().getY() == plateauSize.getLength()) {
                         System.out.println("you are at the edge of the plateau.");
-                    }else if(plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY()+1]){
-
-                    }
-                    else {
+                    } else if (!(plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY() + 1] == null)) {
+                        System.out.println("encountered an obstacle");
+                    } else {
                         rovers.get(roverNumber).getPosition().setY(rovers.get(roverNumber).getPosition().getY() + 1);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY()] = rovers.get(roverNumber);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY() - 1] = null;
                     }
                 }
                 case E -> {
                     if (rovers.get(roverNumber).getPosition().getX() == plateauSize.getWidth()) {
                         System.out.println("you are at the edge of the plateau.");
-                        return;
+                    } else if (!(plateauArray[rovers.get(roverNumber).getPosition().getX() + 1][rovers.get(roverNumber).getPosition().getY()] == null)) {
+                        System.out.println("encountered an obstacle");
                     } else {
                         rovers.get(roverNumber).getPosition().setX(rovers.get(roverNumber).getPosition().getX() + 1);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY()] = rovers.get(roverNumber);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX() - 1][rovers.get(roverNumber).getPosition().getY()] = null;
                     }
                 }
                 case S -> {
                     if (rovers.get(roverNumber).getPosition().getY() == 0) {
                         System.out.println("you are at the edge of the plateau");
-                        return;
+                    } else if (!(plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY() - 1] == null)) {
+                        System.out.println("encountered an obstacle");
                     } else {
                         rovers.get(roverNumber).getPosition().setY(rovers.get(roverNumber).getPosition().getY() - 1);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY()] = rovers.get(roverNumber);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY() + 1] = null;
                     }
                 }
 
                 case W -> {
                     if (rovers.get(roverNumber).getPosition().getY() == 0) {
                         System.out.println("you are at the edge of the plateau");
-                        return;
+                    } else if (!(plateauArray[rovers.get(roverNumber).getPosition().getX() - 1][rovers.get(roverNumber).getPosition().getY()] == null)) {
+                        System.out.println("encountered an obstacle");
                     } else {
                         rovers.get(roverNumber).getPosition().setX(rovers.get(roverNumber).getPosition().getX() - 1);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX()][rovers.get(roverNumber).getPosition().getY()] = rovers.get(roverNumber);
+                        plateauArray[rovers.get(roverNumber).getPosition().getX() + 1][rovers.get(roverNumber).getPosition().getY()] = null;
                     }
                 }
-                default -> throw new IllegalStateException("Unexpected value: " + rovers.get(roverNumber).getOrientation());
+                default ->
+                        throw new IllegalStateException("Unexpected value: " + rovers.get(roverNumber).getOrientation());
             }
         }
     }
