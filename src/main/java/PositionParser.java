@@ -2,7 +2,6 @@ public class PositionParser implements InstructionParser<String, Position>{
     @Override
     public Position parseInput(String input) {
         Position position = new Position();
-
         String[] positionArray = input.split(" ");
 
         if (positionArray.length < 3){
