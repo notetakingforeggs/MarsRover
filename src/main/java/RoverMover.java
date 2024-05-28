@@ -33,11 +33,12 @@ public class RoverMover {
                         throw new IllegalStateException("Unexpected value: " + plateau.getRover(roverNumber).getOrientation());
             }
         } else if (instruction == instruction.M) {
-            Position initialPosition = plateau.getRover(roverNumber).getPosition();
+            int initialX = plateau.getRover(roverNumber).getPosition().getX();
+            int initialY = plateau.getRover(roverNumber).getPosition().getY();
             switch (plateau.getRover(roverNumber).getOrientation()) {
                 case N -> {
                     // if the Y value of the current rover is equal to the length of the plateau you cannot move
-                    if (initialPosition.getY() == plateau.getPlateauSize().getLength()) {
+                    if (initialY == plateau.getPlateauSize().getLength()) {
                         System.out.println("you are at the edge of the plateau.");
                     } else if (!(plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() + 1] == null)) {
                         System.out.println("encountered an obstacle");
@@ -51,7 +52,7 @@ public class RoverMover {
                         //plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() - 1] = null;
 
                         // To replace above to lines ive made an update plateau class
-                        UpdatePlateauPosition.updatePlateauPosition(plateau,plateau.getRover(roverNumber), initialPosition);
+                        UpdatePlateauPosition.updatePlateauPosition(plateau,plateau.getRover(roverNumber),initialX, initialY);
                         // maybe make a method that updates the rover array based on the rovers position rather than accessing the old one
                         // could you use generics? pass in N/E/S/W as classes to pass in.
                     }
