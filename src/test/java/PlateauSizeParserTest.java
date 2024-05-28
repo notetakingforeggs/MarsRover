@@ -1,4 +1,5 @@
-import DataParsers.PlateauSizeParser;
+import ParsingLayer.PlateauSize;
+import ParsingLayer.PlateauSizeParser;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

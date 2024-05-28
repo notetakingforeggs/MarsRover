@@ -1,3 +1,5 @@
+package ParsingLayer;
+
 public enum CompassDirection {
     N,
     E,

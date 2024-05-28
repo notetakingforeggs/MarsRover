@@ -1,4 +1,4 @@
-package DataParsers;
+package ParsingLayer;
 
 public interface InstructionParser<T, R> {
      R parseInput (T input);

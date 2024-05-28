@@ -1,4 +1,4 @@
-package DataParsers;
+package ParsingLayer;
 
 public class MovementParser implements InstructionParser<Character, Instruction> {
     @Override

@@ -1,3 +1,5 @@
+package ParsingLayer;
+
 public class PlateauSize {
     private int length;
     private int width;

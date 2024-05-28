@@ -1,4 +1,6 @@
-import DataParsers.PositionParser;
+import ParsingLayer.CompassDirection;
+import ParsingLayer.Position;
+import ParsingLayer.PositionParser;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

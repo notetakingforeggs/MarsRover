@@ -1,3 +1,6 @@
+import ParsingLayer.CompassDirection;
+import ParsingLayer.Position;
+
 public class Rover {
     private Position position;
     private CompassDirection orientation;

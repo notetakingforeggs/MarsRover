@@ -1,7 +1,9 @@
-import DataParsers.MovementParser;
-import DataParsers.PlateauSizeParser;
-import DataParsers.PositionParser;
+import ParsingLayer.MovementParser;
+import ParsingLayer.PlateauSizeParser;
+import ParsingLayer.Position;
+import ParsingLayer.PositionParser;
 import org.junit.jupiter.api.Test;
+
 
 public class IntegrationTest {
     @Test

@@ -1,4 +1,5 @@
-package DataParsers;
+package ParsingLayer;
+
 
 public class PlateauSizeParser implements InstructionParser<String, PlateauSize> {
     @Override

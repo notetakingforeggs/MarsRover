@@ -1,6 +1,9 @@
+import ParsingLayer.CompassDirection;
+import ParsingLayer.Instruction;
+import ParsingLayer.PlateauSize;
+import ParsingLayer.Position;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 public class Plateau {
     private PlateauSize plateauSize;
