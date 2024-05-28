@@ -1,5 +1,6 @@
 import ParsingLayer.CompassDirection;
 import ParsingLayer.Instruction;
+import ParsingLayer.Position;
 
 import static ParsingLayer.CompassDirection.*;
 
@@ -32,10 +33,11 @@ public class RoverMover {
                         throw new IllegalStateException("Unexpected value: " + plateau.getRover(roverNumber).getOrientation());
             }
         } else if (instruction == instruction.M) {
+            Position initialPosition = plateau.getRover(roverNumber).getPosition();
             switch (plateau.getRover(roverNumber).getOrientation()) {
                 case N -> {
                     // if the Y value of the current rover is equal to the length of the plateau you cannot move
-                    if (plateau.getRover(roverNumber).getPosition().getY() == plateau.getPlateauSize().getLength()) {
+                    if (initialPosition.getY() == plateau.getPlateauSize().getLength()) {
                         System.out.println("you are at the edge of the plateau.");
                     } else if (!(plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() + 1] == null)) {
                         System.out.println("encountered an obstacle");
@@ -44,9 +46,12 @@ public class RoverMover {
                         // TODO here i am not sure if i have fucked up, i have edited a lot of the code and changing where i had previously been accessing the rover position via the rover in the rovers array...
                         // but maybe it is not an issue as i am only accessing one rover at a time in this method, and that is defined by the rover number, in the plateau.getRover thing?
                         // Actually maybe its ok because the getRover method actually accesses the rovers array! leaving this comment here until i check if it works
-                        plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY()] = plateau.getRover(roverNumber);
-                        plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() - 1] = null;
 
+                        //plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY()] = plateau.getRover(roverNumber);
+                        //plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() - 1] = null;
+
+                        // To replace above to lines ive made an update plateau class
+                        UpdatePlateauPosition.updatePlateauPosition(plateau,plateau.getRover(roverNumber), initialPosition);
                         // maybe make a method that updates the rover array based on the rovers position rather than accessing the old one
                         // could you use generics? pass in N/E/S/W as classes to pass in.
                     }

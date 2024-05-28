@@ -4,6 +4,8 @@ import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 
 public class IntegrationTest {
     @Test
@@ -13,15 +15,17 @@ public class IntegrationTest {
 
         // initiate plateau
         Plateau testPlateau = new Plateau(new PlateauSizeParser().parseInput(test[0]));
-
+        System.out.println(Arrays.deepToString(testPlateau.getPlateauArray()));
         // initiate rover and place on plateau
         Position testPosition = new PositionParser().parseInput((test[1]));
         testPlateau.GenerateRover(testPosition);
+        System.out.println(Arrays.deepToString(testPlateau.getPlateauArray()));
 
         // rover move
         for(Character ch : test[2].toCharArray()){// second rover "3 3 E","MMRMMRMRRM"
             testPlateau.moveRover(new MovementParser().parseInput(ch), 0);
         }
+        System.out.println(Arrays.deepToString(testPlateau.getPlateauArray()));
 
 
 
