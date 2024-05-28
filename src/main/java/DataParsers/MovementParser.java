@@ -1,4 +1,6 @@
-public class MovementParser implements InstructionParser<Character, Instruction>{
+package DataParsers;
+
+public class MovementParser implements InstructionParser<Character, Instruction> {
     @Override
     public Instruction parseInput(Character input) {
         if (input == 'L'){

@@ -1,6 +1,7 @@
+import DataParsers.MovementParser;
+import DataParsers.PlateauSizeParser;
+import DataParsers.PositionParser;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 public class IntegrationTest {
     @Test

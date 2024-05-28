@@ -1,4 +1,6 @@
-public class PositionParser implements InstructionParser<String, Position>{
+package DataParsers;
+
+public class PositionParser implements InstructionParser<String, Position> {
     @Override
     public Position parseInput(String input) {
         Position position = new Position();

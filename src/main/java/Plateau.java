@@ -11,8 +11,6 @@ public class Plateau {
     public Plateau(PlateauSize plateauSize) {
         this.plateauSize = plateauSize;
         plateauArray = new Rover[plateauSize.getWidth()][plateauSize.getLength()];
-
-
     }
 
     public void GenerateRover(Position initialPosition) {
