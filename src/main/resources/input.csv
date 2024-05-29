@@ -1,4 +1,5 @@
 plateau size, 5 5
+
 rover_number, initial position, instructions
 0,1 2 N,MMRMM
 1,1 1 N,MMMRMMM

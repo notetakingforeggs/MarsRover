@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class IntegrationTest {
     @Test
     void basicIntegrationTest() throws InterruptedException {
-        String[] test = new String[]{"5 5", "0 0 N", "MMMRMMMM", "1 1 N", "MMMRMMM"};
+        String[] test = new String[]{"10 10", "0 0 N", "MMMRMMMMLMMMMMMMLMMM", "1 1 N", "MMMRMMMMMMMMMLMMMMMMMMMMMLLMMMMMMMMMMMM"};
 
 
         // initiate plateau
@@ -18,6 +18,8 @@ public class IntegrationTest {
         System.out.println("PLATEAU INITIALISED");
         PrintPlateau.printPlateau(testPlateau);
         Thread.sleep(2000);
+        System.out.println("\n\n\n\n\n\n");
+
         // initiate rover and place on plateau
         Position testPosition = new PositionParser().parseInput((test[1]));
         testPlateau.GenerateRover(testPosition);
@@ -32,7 +34,7 @@ public class IntegrationTest {
             System.out.println("\n\n\n\n\n\n");
 
             PrintPlateau.printPlateau(testPlateau);
-            Thread.sleep(1000);
+            Thread.sleep(700);
         }
         //Thread.sleep(1000);
         System.out.println("\n\n\n\n\n\n");
@@ -55,7 +57,7 @@ public class IntegrationTest {
             System.out.println("\n\n\n\n\n\n");
 
             PrintPlateau.printPlateau(testPlateau);
-            Thread.sleep(1000);
+            Thread.sleep(700);
         }
         Thread.sleep(1000);
 

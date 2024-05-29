@@ -4,6 +4,8 @@ import ParsingLayer.Position;
 
 
 // could you use generics? pass in N/E/S/W as classes to pass in.
+// TODO separate this off into movement layer package at some point.
+
 
 import static ParsingLayer.CompassDirection.*;
 
@@ -43,7 +45,7 @@ public class RoverMover {
             switch (plateau.getRover(roverNumber).getOrientation()) {
                 case N -> {
                     // if the Y value of the current rover is equal to the length of the plateau you cannot move
-                    if (initialY == plateau.getPlateauSize().getLength()) {
+                    if (initialY == plateau.getPlateauSize().getLength()-1) {
                         System.out.println("you are at the edge of the plateau.");
                         // if it is trying to move into an obstacle
                     } else if (!(plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX()][plateau.getRover(roverNumber).getPosition().getY() + 1] == null)) {
@@ -58,7 +60,7 @@ public class RoverMover {
                     }
                 }
                 case E -> {
-                    if (plateau.getRover(roverNumber).getPosition().getX() == plateau.getPlateauSize().getWidth()) {
+                    if (plateau.getRover(roverNumber).getPosition().getX() == plateau.getPlateauSize().getWidth()-1) {
                         System.out.println("you are at the edge of the plateau.");
                     } else if (!(plateau.getPlateauArray()[plateau.getRover(roverNumber).getPosition().getX() + 1][plateau.getRover(roverNumber).getPosition().getY()] == null)) {
                         System.out.println("encountered an obstacle");
