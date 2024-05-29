@@ -12,7 +12,6 @@ public class IntegrationTest {
     void basicIntegrationTest() throws InterruptedException {
         String[] test = new String[]{"10 10", "0 0 N", "MMMRMMMMLMMMMMMMLMMM", "1 1 N", "MMMRMMMMMMMMMLMMMMMMMMMMMLLMMMMMMMMMMMM"};
 
-
         // initiate plateau
         Plateau testPlateau = new Plateau(new PlateauSizeParser().parseInput(test[0]));
         System.out.println("PLATEAU INITIALISED");

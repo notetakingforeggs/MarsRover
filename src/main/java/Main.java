@@ -1,26 +1,73 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import ParsingLayer.MovementParser;
+import ParsingLayer.PlateauSizeParser;
+import ParsingLayer.Position;
+import ParsingLayer.PositionParser;
+
 import java.util.ArrayList;
 
+
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String filepath = "/home/ludic/northcoders/fundamentals/MarsRover/src/main/resources/input.csv";
-        FileInputReader.readFile(filepath);
+        ArrayList<String> test = FileInputReader.readFile(filepath);
+//        System.out.println("TEST" + testString);
+        System.out.println(test.get(1));
 
-//        ArrayList<String> lines = new ArrayList<>();
-//        try (BufferedReader reader = new BufferedReader(new FileReader(filepath))) {
-//                String line = reader.readLine();
-//                while (line != null){
-//                    lines.add(line);
-//                    line = reader.readLine();
-//                }
-//
-//        } catch (IOException e) {
-//            System.out.println("no file?");
-//        }
-//lines.stream().forEach(System.out::println);
+        //String[] test = new String[]{"10 10", "0 0 N", "MMMRMMMMLMMMMMMMLMMM", "1 1 N", "MMMRMMMMMMMMMLMMMMMMMMMMMLLMMMMMMMMMMMM"};
 
+        // initiate plateau
+        Plateau testPlateau = new Plateau(new PlateauSizeParser().parseInput(test.get(0)));
+        System.out.println("PLATEAU INITIALISED");
+        PrintPlateau.printPlateau(testPlateau);
+        Thread.sleep(2000);
+        System.out.println("\n\n\n\n\n\n");
+
+        // initiate rover and place on plateau
+        Position testPosition = new PositionParser().parseInput((test.get(1)));
+        testPlateau.GenerateRover(testPosition);
+        System.out.println("FIRST ROVER INITIALISED");
+        PrintPlateau.printPlateau(testPlateau);
+        Thread.sleep(1000);
+
+
+        // rover move
+        for (Character ch : test.get(2).toCharArray()) {
+            testPlateau.moveRover(new MovementParser().parseInput(ch), 0);
+            System.out.println("\n\n\n\n\n\n");
+
+            PrintPlateau.printPlateau(testPlateau);
+            Thread.sleep(700);
+        }
+        //Thread.sleep(1000);
+        System.out.println("\n\n\n\n\n\n");
+
+
+        //System.out.println(testPlateau.getRover(0).getPosition().getX() + " " + testPlateau.getRover(0).getPosition().getY() + " " + testPlateau.getRover(0).getOrientation().toString());
+
+        // initiate second rover
+      /*  Position testPosition2 = new PositionParser().parseInput((test[3]));
+        testPlateau.GenerateRover(testPosition2);
+        System.out.println("SECOND ROVER INITIALISED");
+        PrintPlateau.printPlateau(testPlateau);
+        Thread.sleep(2000);
+
+
+        // Move second rover
+        for (Character ch : test[4].toCharArray()) {
+            testPlateau.moveRover(new MovementParser().parseInput(ch), 1);
+            System.out.println("\n\n\n\n\n\n");
+
+            PrintPlateau.printPlateau(testPlateau);
+            Thread.sleep(700);
+        }
+        Thread.sleep(1000);
+
+        System.out.println(testPlateau.getRover(1).getPosition().getX() + " " + testPlateau.getRover(1).getPosition().getY() + " " + testPlateau.getRover(1).getOrientation());
+
+        PrintPlateau.printPlateau(testPlateau);
+    }
+
+
+*/
     }
 }

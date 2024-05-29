@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class FileInputReader {
-    public static String readFile(String filePath) {
+    public static ArrayList<String> readFile(String filePath) {
 
         ArrayList<String> lines = new ArrayList<>();
         String filepath = filePath;
@@ -19,9 +19,6 @@ public class FileInputReader {
         } catch (IOException e) {
             System.out.println("no file?");
         }
-        lines.stream().forEach(System.out::println);
-        lines.stream().toList();
-
-     return "hello";
+        return lines;
     }
 }
