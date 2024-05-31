@@ -2,6 +2,7 @@ import ParsingLayer.MovementParser;
 import ParsingLayer.PlateauSizeParser;
 import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
+import TerminalLayer.TerminalProgram;
 
 import java.util.ArrayList;
 
@@ -12,6 +13,9 @@ public class Main {
         ArrayList<String> test = FileInputReader.readFile(filepath);
 //        System.out.println("TEST" + testString);
         System.out.println(test.get(1));
+
+        TerminalProgram terminalProgram = new TerminalProgram();
+        terminalProgram.terminalProgram();
 
         //String[] test = new String[]{"10 10", "0 0 N", "MMMRMMMMLMMMMMMMLMMM", "1 1 N", "MMMRMMMMMMMMMLMMMMMMMMMMMLLMMMMMMMMMMMM"};
 
