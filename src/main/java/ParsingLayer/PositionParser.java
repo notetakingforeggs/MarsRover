@@ -1,14 +1,16 @@
 package ParsingLayer;
 
 
+import Models.Plateau;
+
 public class PositionParser implements InstructionParser<String, Position> {
     @Override
     public Position parseInput(String input) {
         Position position = new Position();
-        String[] positionArray = input.split(" ");
+        String[] positionArray = input.toUpperCase().split(",");
 
         if (positionArray.length < 3){
-            System.out.println("input must be three characters separated by spaces");
+            System.out.println("input must be: position on X axis, position on Y axis, Orientation as a letter (eg. 4,3,N) ");
             return null;
         }
 
@@ -19,13 +21,14 @@ public class PositionParser implements InstructionParser<String, Position> {
             position.setX(Math.abs(Integer.parseInt(positionArray[0])));
             position.setY(Math.abs(Integer.parseInt(positionArray[1])));
             position.setFacing(compassDirection);
+            return position;
 
         } catch (NumberFormatException e) {
             System.out.println("X and Y coordinates takes input of only numbers");
             return null;
         }
 
-        return position;
+
     }
 
     private static CompassDirection getCompassDirection(String[] positionArray) {

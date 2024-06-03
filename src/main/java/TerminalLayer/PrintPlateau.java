@@ -1,3 +1,7 @@
+package TerminalLayer;
+
+import Models.Plateau;
+
 public class PrintPlateau {
     public static void printPlateau(Plateau plateau) {
         int plateauLength = plateau.getPlateauArray().length;

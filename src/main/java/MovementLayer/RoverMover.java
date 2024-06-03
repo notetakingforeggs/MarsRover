@@ -1,6 +1,8 @@
-import ParsingLayer.CompassDirection;
+package MovementLayer;
+
+import Models.Plateau;
+import Models.Rover;
 import ParsingLayer.Instruction;
-import ParsingLayer.Position;
 
 
 // could you use generics? pass in N/E/S/W as classes to pass in.

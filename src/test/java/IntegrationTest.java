@@ -1,10 +1,10 @@
+import Models.Plateau;
 import ParsingLayer.MovementParser;
 import ParsingLayer.PlateauSizeParser;
 import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
+import TerminalLayer.PrintPlateau;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 
 public class IntegrationTest {

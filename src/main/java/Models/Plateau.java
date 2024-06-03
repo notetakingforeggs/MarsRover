@@ -1,4 +1,6 @@
-import ParsingLayer.CompassDirection;
+package Models;
+
+import MovementLayer.RoverMover;
 import ParsingLayer.Instruction;
 import ParsingLayer.PlateauSize;
 import ParsingLayer.Position;
@@ -21,6 +23,8 @@ public class Plateau {
         Rover rover = new Rover(initialPosition);
         if (plateauSize.getLength() < initialPosition.getY() || plateauSize.getWidth() < initialPosition.getX()) {
             System.out.println("initial rover position is not within plateau, try again");
+            //throw an error here?
+
             return;
         }
         this.plateauArray[initialPosition.getX()][initialPosition.getY()] = rover;

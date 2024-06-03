@@ -1,3 +1,5 @@
+package Models;
+
 import ParsingLayer.CompassDirection;
 import ParsingLayer.Position;
 
