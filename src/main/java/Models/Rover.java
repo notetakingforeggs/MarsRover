@@ -4,7 +4,7 @@ import ParsingLayer.CompassDirection;
 import ParsingLayer.Position;
 
 import java.util.concurrent.atomic.AtomicInteger;
-
+// TODO make an enum for Rover Symbol end give it a symbol
 public class Rover {
     private static final AtomicInteger counter = new AtomicInteger();
     private final int id;

@@ -12,8 +12,13 @@ public class TerminalRoverMover {
         System.out.println("example input: MMMMMRMMMLMM");
         String instructions = scanner.nextLine();
 
-
-        for (Character ch : instructions.toCharArray()) {
+        char[] instructionCharArray = instructions
+                .strip()
+                .replace(" ", "")
+                .replace(",", "")
+                .toUpperCase()
+                .toCharArray();
+        for (Character ch : instructionCharArray) {
             // TODO here you need to ask for rover number
             plateau.moveRover(new MovementParser().parseInput(ch), 0);
             PrintPlateau.printPlateau(plateau, 700);

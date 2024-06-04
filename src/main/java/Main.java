@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        String filepath = "/home/ludic/northcoders/fundamentals/MarsRover/src/main/resources/input.csv";
-        ArrayList<String> test = FileInputReader.readFile(filepath);
-//        System.out.println("TEST" + testString);
-        System.out.println(test.get(1));
+//        String filepath = "/home/ludic/northcoders/fundamentals/MarsRover/src/main/resources/input.csv";
+//        ArrayList<String> test = FileInputReader.readFile(filepath);
+////        System.out.println("TEST" + testString);
+//        System.out.println(test.get(1));
 
         TerminalProgram terminalProgram = new TerminalProgram();
         terminalProgram.terminalProgram();
