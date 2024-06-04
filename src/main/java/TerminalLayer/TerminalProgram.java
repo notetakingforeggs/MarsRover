@@ -22,14 +22,17 @@ public class TerminalProgram {
 
         // initiate rover and place on plateau
         GetNewRoverCoords getNewRoverCoords = new GetNewRoverCoords();
-        plateau.GenerateRover(getNewRoverCoords.getInput(scanner, plateau, name));
-
-
+        Position position = (getNewRoverCoords.getInput(scanner, plateau));
+        System.out.println("Please input a name for this rover");
+        String name = scanner.nextLine();
+        plateau.GenerateRover(position, name);
+        System.out.println("new rover initialised: " + name);
         PrintPlateau.printPlateau(plateau, 1000);
-        System.out.println(plateau.rovers);
 
 
-        // move rover
+
+
+     // move rover
      TerminalRoverMover terminalRoverMover = new TerminalRoverMover();
      terminalRoverMover.roverMove(scanner, plateau);
 

@@ -3,7 +3,11 @@ package Models;
 import ParsingLayer.CompassDirection;
 import ParsingLayer.Position;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Rover {
+    private static final AtomicInteger counter = new AtomicInteger();
+    private final int id;
     private Position position;
     private CompassDirection orientation;
     private String name;
@@ -11,7 +15,10 @@ public class Rover {
         this.position = initialPosition;
         this.orientation = initialPosition.getFacing();
         this.name = name;
+        this.id = counter.incrementAndGet();
+
     }
+
 
 
     public void setOrientation(CompassDirection orientation) {

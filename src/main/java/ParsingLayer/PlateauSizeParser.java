@@ -10,8 +10,8 @@ public class PlateauSizeParser implements InstructionParser<String, PlateauSize>
                 .replace(" ", "")
                 .split(",");
 
-        if (dims.length < 2){
-            System.out.println("input must be two numbers separated by a space");
+        if (dims.length != 2) {
+            System.out.println("input must be two numbers separated by a comma");
             return null;
         }
 
@@ -19,7 +19,7 @@ public class PlateauSizeParser implements InstructionParser<String, PlateauSize>
             plateauSize.setWidth(Math.abs(Integer.parseInt(dims[0])));
             plateauSize.setLength(Math.abs(Integer.parseInt(dims[1])));
 
-        } catch (NumberFormatException e) {
+        } catch (NumberFormatException | NullPointerException e) {
             System.out.println("plateau size takes input of only numbers");
             return null;
         }
