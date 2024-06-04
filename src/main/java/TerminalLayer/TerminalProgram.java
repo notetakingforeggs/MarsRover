@@ -1,5 +1,7 @@
 package TerminalLayer;
 import Models.Plateau;
+import Models.Rover;
+import ParsingLayer.MovementParser;
 import ParsingLayer.PlateauSizeParser;
 import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
@@ -20,16 +22,17 @@ public class TerminalProgram {
 
         // initiate rover and place on plateau
         GetNewRoverCoords getNewRoverCoords = new GetNewRoverCoords();
-        plateau.GenerateRover(getNewRoverCoords.getInput(scanner, plateau));
+        plateau.GenerateRover(getNewRoverCoords.getInput(scanner, plateau, name));
 
-        System.out.println("FIRST ROVER INITIALISED");
+
         PrintPlateau.printPlateau(plateau, 1000);
+        System.out.println(plateau.rovers);
 
-        // do like an options menu. see menu. switch statemnt.
-        // new plateau
-        // move
-        // new rover
-        //
+
+        // move rover
+     TerminalRoverMover terminalRoverMover = new TerminalRoverMover();
+     terminalRoverMover.roverMove(scanner, plateau);
+
 
     }
 }

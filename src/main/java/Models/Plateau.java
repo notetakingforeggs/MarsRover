@@ -18,9 +18,9 @@ public class Plateau {
         plateauArray = new Rover[plateauSize.getWidth()][plateauSize.getLength()];
     }
 
-    public void GenerateRover(Position initialPosition) {
+    public void GenerateRover(Position initialPosition, String name) {
 
-        Rover rover = new Rover(initialPosition);
+        Rover rover = new Rover(initialPosition, name);
         if (plateauSize.getLength() < initialPosition.getY() || plateauSize.getWidth() < initialPosition.getX()) {
             System.out.println("initial rover position is not within plateau, try again");
             //throw an error here?
