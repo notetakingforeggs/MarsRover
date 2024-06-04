@@ -3,7 +3,7 @@ package TerminalLayer;
 import Models.Plateau;
 
 public class PrintPlateau {
-    public static void printPlateau(Plateau plateau) {
+    public static void printPlateau(Plateau plateau, int pause) {
         int plateauLength = plateau.getPlateauArray().length;
 
         for (int x = plateauLength - 1; x >= 0; x--) {
@@ -19,5 +19,11 @@ public class PrintPlateau {
             System.out.println();
         }
         //System.out.println("\n---------------------------\n");
+        try {
+            Thread.sleep(pause);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("\n\n\n\n\n\n");
     }
 }

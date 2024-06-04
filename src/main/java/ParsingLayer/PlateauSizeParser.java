@@ -6,7 +6,7 @@ public class PlateauSizeParser implements InstructionParser<String, PlateauSize>
     public PlateauSize parseInput(String input) {
 
         PlateauSize plateauSize = new PlateauSize();
-        String[] dims = input.split(" ");
+        String[] dims = input.split(",");
 
         if (dims.length < 2){
             System.out.println("input must be two numbers separated by a space");

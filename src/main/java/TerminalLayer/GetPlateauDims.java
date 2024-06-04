@@ -1,19 +1,19 @@
 package TerminalLayer;
 
+import Models.Plateau;
 import ParsingLayer.PlateauSize;
 import ParsingLayer.PlateauSizeParser;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class GetPlateauDims implements GetInput<Scanner, PlateauSize> {
+public class GetPlateauDims {
 
-    @Override
     public PlateauSize getInput(Scanner scanner) {
 
         PlateauSizeParser plateauSizeParser = new PlateauSizeParser();
 
-        System.out.println("Please input plateau dimensions in format: x y");
+        System.out.println("Please input plateau dimensions in format: x,y");
         while (true) {
             try {
                 String input = scanner.nextLine();
