@@ -22,17 +22,6 @@ public class GetPlateauDims {
                 System.out.println("Integers only");
                 scanner.next();
             }
-//
-//        System.out.println("Please input one dimension for the plateau (squares only atm)");
-//        while (true) {
-//            try {
-//                Integer length = s.nextInt();
-//                return length;
-//            } catch (InputMismatchException e) {
-//                System.out.println("Integers only");
-//                s.next();
-//            }
-        }
-
+       }
     }
 }

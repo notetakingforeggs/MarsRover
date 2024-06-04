@@ -5,8 +5,9 @@ import Models.Plateau;
 public class PrintPlateau {
     public static void printPlateau(Plateau plateau, int pause) {
         int plateauLength = plateau.getPlateauArray().length;
+        int plateauWidth = plateau.getPlateauArray()[0].length;
 
-        for (int x = plateauLength - 1; x >= 0; x--) {
+        for (int x = plateauWidth - 1; x >= 0; x--) {
             for (int y = 0; y < plateauLength; y++) {
                 if (plateau.getPlateauArray()[y][x] == null) {
                     System.out.print("|~~");

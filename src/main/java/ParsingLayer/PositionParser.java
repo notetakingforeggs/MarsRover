@@ -27,8 +27,6 @@ public class PositionParser implements InstructionParser<String, Position> {
             System.out.println("X and Y coordinates takes input of only numbers");
             return null;
         }
-
-
     }
 
     private static CompassDirection getCompassDirection(String[] positionArray) {
