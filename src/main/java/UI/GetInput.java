@@ -1,4 +1,4 @@
-package TerminalLayer;
+package UI;
 
 import Models.Plateau;
 

@@ -1,10 +1,9 @@
-package TerminalLayer;
+package UI;
 
 import Models.Plateau;
 import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class GetNewRoverCoords {

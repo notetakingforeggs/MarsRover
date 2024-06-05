@@ -3,7 +3,7 @@ import ParsingLayer.MovementParser;
 import ParsingLayer.PlateauSizeParser;
 import ParsingLayer.Position;
 import ParsingLayer.PositionParser;
-import TerminalLayer.PrintPlateau;
+import UI.PrintPlateau;
 import org.junit.jupiter.api.Test;
 
 
@@ -15,15 +15,15 @@ public class IntegrationTest {
         // initiate plateau
         Plateau testPlateau = new Plateau(new PlateauSizeParser().parseInput(test[0]));
         System.out.println("PLATEAU INITIALISED");
-        PrintPlateau.printPlateau(testPlateau);
+        PrintPlateau.printPlateau(testPlateau, 1);
         Thread.sleep(2000);
         System.out.println("\n\n\n\n\n\n");
 
         // initiate rover and place on plateau
         Position testPosition = new PositionParser().parseInput((test[1]));
-        testPlateau.GenerateRover(testPosition);
+        testPlateau.GenerateRover(testPosition, "steve");
         System.out.println("FIRST ROVER INITIALISED");
-        PrintPlateau.printPlateau(testPlateau);
+        PrintPlateau.printPlateau(testPlateau, 1);
         Thread.sleep(1000);
 
 
@@ -32,7 +32,7 @@ public class IntegrationTest {
             testPlateau.moveRover(new MovementParser().parseInput(ch), 0);
             System.out.println("\n\n\n\n\n\n");
 
-            PrintPlateau.printPlateau(testPlateau);
+            PrintPlateau.printPlateau(testPlateau, 1);
             Thread.sleep(700);
         }
         //Thread.sleep(1000);
@@ -44,9 +44,9 @@ public class IntegrationTest {
 
         // initiate second rover
         Position testPosition2 = new PositionParser().parseInput((test[3]));
-        testPlateau.GenerateRover(testPosition2);
+        testPlateau.GenerateRover(testPosition2, "steve");
         System.out.println("SECOND ROVER INITIALISED");
-        PrintPlateau.printPlateau(testPlateau);
+        PrintPlateau.printPlateau(testPlateau, 1);
         Thread.sleep(2000);
 
 
@@ -55,13 +55,13 @@ public class IntegrationTest {
             testPlateau.moveRover(new MovementParser().parseInput(ch), 1);
             System.out.println("\n\n\n\n\n\n");
 
-            PrintPlateau.printPlateau(testPlateau);
+            PrintPlateau.printPlateau(testPlateau, 1);
             Thread.sleep(700);
         }
         Thread.sleep(1000);
 
         System.out.println(testPlateau.getRover(1).getPosition().getX() + " " + testPlateau.getRover(1).getPosition().getY() + " " + testPlateau.getRover(1).getOrientation());
 
-        PrintPlateau.printPlateau(testPlateau);
+        PrintPlateau.printPlateau(testPlateau, 1);
     }
 }

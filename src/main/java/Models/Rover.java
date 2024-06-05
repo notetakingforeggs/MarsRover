@@ -2,7 +2,7 @@ package Models;
 
 import ParsingLayer.CompassDirection;
 import ParsingLayer.Position;
-import TerminalLayer.IDColour;
+import UI.IDColour;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

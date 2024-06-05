@@ -1,6 +1,5 @@
-package TerminalLayer;
+package UI;
 
-import Models.Plateau;
 import ParsingLayer.PlateauSize;
 import ParsingLayer.PlateauSizeParser;
 

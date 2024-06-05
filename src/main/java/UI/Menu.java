@@ -1,6 +1,4 @@
-package TerminalLayer;
-
-import java.util.Scanner;
+package UI;
 
 public class Menu {
     public void getMenu(){

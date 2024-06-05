@@ -1,4 +1,4 @@
-package TerminalLayer;
+package UI;
 
 import java.util.HashMap;
 import java.util.Map;

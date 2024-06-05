@@ -1,7 +1,6 @@
-package TerminalLayer;
+package UI;
 
 import Models.Plateau;
-import ParsingLayer.InstructionParser;
 import ParsingLayer.MovementParser;
 
 import java.util.Scanner;

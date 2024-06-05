@@ -1,35 +1,24 @@
-package TerminalLayer;
+package UI;
 
 import Models.Plateau;
-import Models.Rover;
-import ParsingLayer.MovementParser;
-import ParsingLayer.PlateauSizeParser;
 import ParsingLayer.Position;
-import ParsingLayer.PositionParser;
 
-import java.sql.SQLOutput;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TerminalProgram {
 
     public void terminalProgram() {
-        System.out.println("Welcome to Mars Rover");
-        System.out.println("   _____                      __________   ");
-        System.out.println("  /     \\ _____ _______  _____\\______   \\ _______  __ ___________");
-        System.out.println(" /  \\ /  \\\\__  \\\\_  __ \\/  ___/|       _//  _ \\  \\/ // __ \\_  __ \\");
-        System.out.println("/    Y    \\/ __ \\|  | \\/\\___ \\ |    |   (  <_> )   /\\  ___/|  | \\/");
-        System.out.println("\\____|__  (____  /__|  /____  >|____|_  /\\____/ \\_/  \\___  >__|");
-        System.out.println("        \\/     \\/           \\/        \\/                 \\/");
-
+        System.out.println("Welcome to...");
+        ASCIIArt.printMarsRover();
 
         boolean ended = false;
         Plateau plateau = null;
         Scanner scanner = new Scanner(System.in);
-        while (!ended) {
 
+        while (!ended) {
             new Menu().getMenu();
-            int choice = 0;
+            int choice;
             try {
                 choice = scanner.nextInt();
                 scanner.nextLine();
@@ -37,6 +26,9 @@ public class TerminalProgram {
                 switch (choice) {
                     case 1 -> {
                         // initiate plateau
+                        if(plateau != null){
+                            plateau = null;
+                        }
                         GetPlateauDims getPlateauDims = new GetPlateauDims();
                         plateau = new Plateau(getPlateauDims.getInput(scanner));
                         System.out.println("PLATEAU INITIALISED");
@@ -64,7 +56,7 @@ public class TerminalProgram {
                             System.out.println("You must initiate a plateau before initiating and 3moving a rover");
                             continue;
                         } else if (plateau.rovers.get(0) == null) {
-                            System.out.println("You must initate a rover before trying to move it");
+                            System.out.println("You must initiate a rover before trying to move it");
                             continue;
                         }
                         TerminalRoverMover terminalRoverMover = new TerminalRoverMover();
@@ -82,10 +74,10 @@ public class TerminalProgram {
                         // quit
                         System.out.println("Exiting program. Goodbye and thank-you for your time.");
                         scanner.close();
+                        ASCIIArt.printMarsRover();
                         ended = true;
                     }
-                    default ->
-                            System.out.println("Please enter one of the options as its corresponding integer value");
+                    default -> System.out.println("Please enter one of the options as its corresponding integer value");
                 }
 
             } catch (InputMismatchException e) {
