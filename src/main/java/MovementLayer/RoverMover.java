@@ -41,9 +41,8 @@ public class RoverMover {
             }
         } else if (instruction == instruction.M) {
 
-            int initialX = plateau.getRover(roverID-1).getPosition().getX();
-            int initialY = plateau.getRover(roverID-1).getPosition().getY();
-
+            int initialX = plateau.getRover(roverID).getPosition().getX();
+            int initialY = plateau.getRover(roverID).getPosition().getY();
             switch (plateau.getRover(roverID).getOrientation()) {
                 case N -> {
                     // if the Y value of the current rover is equal to the length of the plateau you cannot move

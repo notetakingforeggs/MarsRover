@@ -35,6 +35,7 @@ public class Plateau {
     }
 
     public void moveRover(Instruction instruction, int roverID) {
+        //System.out.println("Move rover called, id currently:" + roverID);
         new RoverMover().move(this, instruction, roverID);
     }
 
@@ -47,7 +48,9 @@ public class Plateau {
     }
 
     public Rover getRover(int roverID) {
-        System.out.println("ID:" + roverID);
-        return rovers.get(roverID);
+        //System.out.println("get rover called - ID is currently:" + roverID);
+
+        //or here is the error? somewhere there must be another doing the minus one?
+        return rovers.get(roverID -1);
     }
 }
