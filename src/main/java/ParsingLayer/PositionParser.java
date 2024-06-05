@@ -9,7 +9,7 @@ public class PositionParser implements InstructionParser<String, Position> {
         Position position = new Position();
         String[] positionArray = input.toUpperCase().split(",");
 
-        if (positionArray.length != 3){
+        if (positionArray.length != 3) {
             System.out.println("input must be: position on X axis, position on Y axis, Orientation as a letter (eg. 4,3,N) ");
             return null;
         }
@@ -18,8 +18,8 @@ public class PositionParser implements InstructionParser<String, Position> {
         CompassDirection compassDirection = getCompassDirection(positionArray);
 
         try {
-            position.setX(Math.abs(Integer.parseInt(positionArray[0])-1));
-            position.setY(Math.abs(Integer.parseInt(positionArray[1])-1));
+            position.setX(Math.abs(Integer.parseInt(positionArray[0]) - 1));
+            position.setY(Math.abs(Integer.parseInt(positionArray[1]) - 1));
             position.setFacing(compassDirection);
             return position;
 
@@ -33,13 +33,13 @@ public class PositionParser implements InstructionParser<String, Position> {
         String direction = positionArray[2].strip();
 
         CompassDirection compassDirection;
-        switch (direction){
-            case "N" ->compassDirection = CompassDirection.N;
+        switch (direction) {
+            case "N" -> compassDirection = CompassDirection.N;
             case "E" -> compassDirection = CompassDirection.E;
             case "S" -> compassDirection = CompassDirection.S;
             case "W" -> compassDirection = CompassDirection.W;
             default -> throw new IllegalStateException("Unexpected value: " + direction);
-             }
+        }
         return compassDirection;
     }
 }

@@ -14,7 +14,10 @@ public class PlateauSizeParser implements InstructionParser<String, PlateauSize>
             System.out.println("input must be two numbers separated by a comma");
             return null;
         }
-
+        else if(Integer.valueOf(dims[0]) < 1 || Integer.valueOf(dims[1]) < 1){
+            System.out.println("Plateau cannot be less than 1 unit in either dimension");
+            return null;
+        }
         try {
             plateauSize.setWidth(Math.abs(Integer.parseInt(dims[0])));
             plateauSize.setLength(Math.abs(Integer.parseInt(dims[1])));

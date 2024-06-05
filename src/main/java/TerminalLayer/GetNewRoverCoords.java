@@ -14,7 +14,6 @@ public class GetNewRoverCoords {
         while (true) {
             System.out.println("Please input the position you would like to place the new rover, in the format: x, y, orientation");
             PositionParser positionParser = new PositionParser();
-
             String coords = scanner.nextLine();
             if (positionParser.parseInput(coords) == null) {
                 continue;

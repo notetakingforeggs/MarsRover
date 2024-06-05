@@ -7,7 +7,7 @@ import TerminalLayer.PrintPlateau;
 import TerminalLayer.TerminalProgram;
 
 import java.util.ArrayList;
-
+// TODO array of zero zero does not handle well
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {

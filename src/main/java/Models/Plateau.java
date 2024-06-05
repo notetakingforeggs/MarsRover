@@ -34,8 +34,8 @@ public class Plateau {
         // TODO multi rovers without repeating laods of code?
     }
 
-    public void moveRover(Instruction instruction, int roverNumber) {
-        new RoverMover().move(this, instruction, roverNumber);
+    public void moveRover(Instruction instruction, int roverID) {
+        new RoverMover().move(this, instruction, roverID);
     }
 
     public PlateauSize getPlateauSize() {
@@ -46,7 +46,8 @@ public class Plateau {
         return plateauArray;
     }
 
-    public Rover getRover(int roverNumber) {
-        return rovers.get(roverNumber);
+    public Rover getRover(int roverID) {
+        System.out.println("ID:" + roverID);
+        return rovers.get(roverID);
     }
 }
