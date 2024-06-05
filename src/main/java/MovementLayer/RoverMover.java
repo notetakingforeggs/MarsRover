@@ -6,8 +6,6 @@ import ParsingLayer.Instruction;
 
 
 // could you use generics? pass in N/E/S/W as classes to pass in.
-// TODO separate this off into movement layer package at some point.
-
 
 import static ParsingLayer.CompassDirection.*;
 
