@@ -1,7 +1,7 @@
 
 import UI.TerminalProgram;
-
-// TODO put alien life somewhere in the plateau
+// TODO fix all the tests i broke
+// TODO put alien life somewhere in the plateau and quit with ascii alien print if found
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
