@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 // TODO make an enum for Rover Symbol end give it a symbol
 public class Rover {
-    private static final AtomicInteger counter = new AtomicInteger();
+    private AtomicInteger counter = new AtomicInteger();
     private final int id;
     private final IDColour colour;
     private String name;
@@ -54,6 +54,10 @@ public class Rover {
 
     public IDColour getColour() {
         return colour;
+    }
+
+    public void resetCounter() {
+        counter.set(0);
     }
 
     public IDColour setColour(int ID) {

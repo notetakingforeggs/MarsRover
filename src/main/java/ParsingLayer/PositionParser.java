@@ -16,6 +16,9 @@ public class PositionParser implements InstructionParser<String, Position> {
 
         // set compass direction value to enum
         CompassDirection compassDirection = getCompassDirection(positionArray);
+        if (compassDirection == null){
+            return null;
+        }
 
         try {
             position.setX(Math.abs(Integer.parseInt(positionArray[0]) - 1));
@@ -31,15 +34,21 @@ public class PositionParser implements InstructionParser<String, Position> {
 
     private static CompassDirection getCompassDirection(String[] positionArray) {
         String direction = positionArray[2].strip();
-
         CompassDirection compassDirection;
-        switch (direction) {
-            case "N" -> compassDirection = CompassDirection.N;
-            case "E" -> compassDirection = CompassDirection.E;
-            case "S" -> compassDirection = CompassDirection.S;
-            case "W" -> compassDirection = CompassDirection.W;
-            default -> throw new IllegalStateException("Unexpected value: " + direction);
+        try {
+            switch (direction) {
+                case "N" -> compassDirection = CompassDirection.N;
+                case "E" -> compassDirection = CompassDirection.E;
+                case "S" -> compassDirection = CompassDirection.S;
+                case "W" -> compassDirection = CompassDirection.W;
+                default -> {
+                    System.out.println("invalid compass direction, choose between N, S, E and W");
+                    throw new IllegalStateException("Unexpected value: " + direction);
+                }
+            }
+            return compassDirection;
+        }catch (IllegalStateException e){
+            return null;
         }
-        return compassDirection;
     }
 }

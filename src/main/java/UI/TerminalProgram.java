@@ -1,10 +1,13 @@
 package UI;
 
 import Models.Plateau;
+import Models.Rover;
 import ParsingLayer.Position;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
+import static ParsingLayer.CompassDirection.N;
 
 public class TerminalProgram {
 
@@ -26,7 +29,11 @@ public class TerminalProgram {
                 switch (choice) {
                     case 1 -> {
                         // initiate plateau
-                        if(plateau != null){
+                        if (plateau != null) {
+                            Position position = new Position();
+                            Rover reset = new Rover(position, "reset");
+                            reset.resetCounter();
+                            reset = null;
                             plateau = null;
                         }
                         GetPlateauDims getPlateauDims = new GetPlateauDims();
@@ -64,6 +71,7 @@ public class TerminalProgram {
 
                     }
                     case 4 -> {
+                        // View Details
                         if (plateau == null) {
                             System.out.println("There are no rovers on the plateau");
                             continue;
@@ -71,7 +79,7 @@ public class TerminalProgram {
                         new ViewRovers().viewRover(plateau);
                     }
                     case 5 -> {
-                        // quit
+                        // Quit
                         System.out.println("Exiting program. Goodbye and thank-you for your time.");
                         scanner.close();
                         ASCIIArt.printMarsRover();
