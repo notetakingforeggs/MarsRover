@@ -2,21 +2,21 @@
 
 Welcome to the **Mars Rover Project**! This project was created during my time at the Northcoders Bootcamp and is written in Java. It showcases various programming concepts and techniques including Test Driven Development (TDD), Object Oriented Programming (OOP), and Functional Programming in Java.
 
-## 📚 Table of Contents
+# 📚 Table of Contents
+- 
+  - [About the Project](#about-the-project)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Usage](#usage)
+  - [Built With](#built-with)
+  - [Acknowledgements](#acknowledgements)
 
-- [About the Project](#about-the-project)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [Built With](#built-with)
-- [Acknowledgements](#acknowledgements)
 
-## 🌌 About the Project
-
+## <a id="about-the-project"></a>🚀 About the Project
 The Mars Rover Project is a simulation intended to mimic a program that could be used to control semi-autonomous robots on the surface of Mars. The application features a terminal-based user interface and is designed to be intuitive and user-friendly. By pressing "run", the program will guide you through the necessary steps to control the Mars Rover.
 
-## 🛠️ Getting Started
+## <a id = "getting-started"></a> 🛠️ Getting Started
 
 ### Prerequisites
 
@@ -40,7 +40,7 @@ Open the cloned repository in IntelliJ IDEA or any other code editor of your cho
 
 In IntelliJ IDEA, the project should automatically import Maven dependencies. 
 
-## 🎮 Usage
+## ## <a id = "usage"></a> 🎮 Usage
 
 After setting up the project, simply run the main class. The program will start in your terminal, and you can begin interacting with your Mars Rover simulation.
 
@@ -52,7 +52,7 @@ After setting up the project, simply run the main class. The program will start 
 
    The terminal interface will guide you through the process of controlling the Mars Rover.
 
-## 🛠️ Built With
+## <a id = "built-with"></a>  🛠️ Built With
 
 - **Java** - The main programming language used.
 - **J-Unit** - Testing Framework. 
@@ -60,7 +60,7 @@ After setting up the project, simply run the main class. The program will start 
 - **IntelliJ IDEA** - Recommended IDE for running and testing the project.
   
 
-## 🙏 Acknowledgements
+## <a id = "acknowledgements" ></a> 🙏 Acknowledgements
 
 - **Northcoders Bootcamp** - For the incredible training and support.
 - **Various Cohort members** For Invaluable feedback and encouragement.
