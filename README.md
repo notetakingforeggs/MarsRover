@@ -40,7 +40,7 @@ Open the cloned repository in IntelliJ IDEA or any other code editor of your cho
 
 In IntelliJ IDEA, the project should automatically import Maven dependencies. 
 
-## ## <a id = "usage"></a> 🎮 Usage
+## <a id = "usage"></a> 🎮 Usage
 
 After setting up the project, simply run the main class. The program will start in your terminal, and you can begin interacting with your Mars Rover simulation.
 
